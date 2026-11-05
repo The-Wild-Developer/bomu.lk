@@ -3,14 +3,14 @@
 import Image from "next/image";
 
 import SectionLayout from "@/layouts/sectionLayout";
-import { ClockIcon, LeaveCarIcon, RidersIcon } from "@/ui/assets/svg";
+import { ClockIcon, LeaveCarIcon, MoneyIcon, RidersIcon } from "@/ui/assets/svg";
 import Heading from "@/ui/head";
 import Text from "@/ui/text";
 import { useLanguage } from "@/hooks/languageContext";
 import { copy } from "@/lib/copy";
 import { cn } from "@/lib/utils";
 
-const detailIcons = [ClockIcon, RidersIcon, LeaveCarIcon];
+const detailIcons = [LeaveCarIcon, RidersIcon, ClockIcon, MoneyIcon];
 
 export default function AboutSection() {
   const { language } = useLanguage();
@@ -21,13 +21,22 @@ export default function AboutSection() {
     <SectionLayout id="about">
       <div className="grid items-start gap-10 px-8 py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
         <div className="space-y-4 text-left">
-          <Heading
-            as="h2"
-            intent="base-section"
-            className={cn(sinhala && "font-sinhala")}
-          >
-            {about.title}
-          </Heading>
+          <div className="flex w-fit items-center gap-3">
+            <span
+              aria-hidden
+              className="w-1.5 self-stretch rounded-full bg-[#ffc95c]"
+            />
+            <Heading
+              as="h2"
+              intent="base-section"
+              className={cn(
+                "font-semibold leading-[1.15]",
+                sinhala ? "font-sinhala" : "tracking-tight",
+              )}
+            >
+              {about.title}
+            </Heading>
+          </div>
           <Text
             size="lg"
             weight={500}

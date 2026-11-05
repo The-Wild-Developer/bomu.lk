@@ -8,9 +8,11 @@ import SectionLayout from "@/layouts/sectionLayout";
 import HeroContent from "@/ui/hero/heroContent";
 import Features from "@/ui/features";
 import AboutSection from "@/ui/about";
+import DriveSection from "@/ui/drive";
 import TeamSection from "@/ui/team";
 import ContactForm from "@/ui/contact";
 import PromoBanner from "@/ui/promoBanner";
+import BannerVideo from "@/ui/bannerVideo";
 
 export default function Home() {
   return (
@@ -29,7 +31,7 @@ export default function Home() {
             src="/images/hero.png"
             width={1600}
             height={1067}
-            alt="A sober rider taking a friend who has been drinking home"
+            alt="Getting someone who has been drinking home safely"
             className="h-auto w-full object-contain"
           />
         </div>
@@ -40,6 +42,10 @@ export default function Home() {
 
       {/* About us section */}
       <AboutSection />
+
+      <DriveSection />
+
+      <BannerVideo />
 
       <TeamSection />
 

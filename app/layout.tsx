@@ -28,7 +28,8 @@ const sinhala = Noto_Sans_Sinhala({
 
 export const metadata: Metadata = {
   title: "බොමු.lk",
-  description: "We'll get you home safe.",
+  description:
+    "A driver for your car, or a ride in ours, after you've been drinking.",
 };
 
 export default function RootLayout({

@@ -15,29 +15,50 @@ export default function TeamSection() {
 
   return (
     <SectionLayout id="team">
-      <div className="space-y-8 px-4 py-10 md:px-8 md:py-16">
-        <div className="space-y-3 text-center">
-          <Heading
-            as="h2"
-            intent="base-section"
-            className={cn(sinhala && "font-sinhala")}
-          >
-            {team.title}
-          </Heading>
+      <div className="grid items-center gap-10 px-4 py-10 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-16">
+        <div className="space-y-4 text-left">
+          <div className="flex w-fit items-center gap-3">
+            <span
+              aria-hidden
+              className="w-1.5 self-stretch rounded-full bg-[#ffc95c]"
+            />
+            <Heading
+              as="h2"
+              intent="base-section"
+              className={cn(
+                "font-semibold leading-[1.15]",
+                sinhala ? "font-sinhala" : "tracking-tight",
+              )}
+            >
+              {team.title}
+            </Heading>
+          </div>
           <Text
-            size="sm"
-            color="gray"
+            size="lg"
+            weight={500}
+            family="poppins"
+            color="black/800"
             className={cn(sinhala && "font-sinhala")}
           >
             {team.lead}
           </Text>
+          {team.paragraphs.map((paragraph) => (
+            <Text
+              key={paragraph}
+              size="sm"
+              color="gray"
+              className={cn("leading-6", sinhala && "font-sinhala")}
+            >
+              {paragraph}
+            </Text>
+          ))}
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none lg:justify-self-end">
           {team.members.map((member) => (
             <article
               key={member.email}
-              className="flex flex-col items-center gap-5 rounded-xl border border-[#CBCBCB] bg-[#F3F5F7] px-4 py-6 text-center"
+              className="flex flex-col items-center gap-5 rounded-3xl border border-[#CBCBCB] bg-[#F3F5F7] px-4 py-6 text-center"
             >
               <img
                 src={member.image}
@@ -54,6 +75,14 @@ export default function TeamSection() {
                   color="black/800"
                 >
                   {member.name}
+                </Text>
+                <Text
+                  size="sm"
+                  weight={500}
+                  color="gray"
+                  className={cn(sinhala && "font-sinhala")}
+                >
+                  {member.designation[language]}
                 </Text>
                 <a
                   href={`mailto:${member.email}`}
