@@ -89,7 +89,7 @@ export default function AboutSection() {
         <div className="flex items-center justify-center">
           <Image
             src="/images/about.png"
-            alt="A driver holding the door for a rider"
+            alt="A sober driver taking a client home in their own vehicle"
             width={1024}
             height={768}
             className="h-auto w-full object-contain"

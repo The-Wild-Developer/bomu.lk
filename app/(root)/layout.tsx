@@ -5,7 +5,7 @@ import PageLayout from "@/layouts/pageLayout";
 export const metadata: Metadata = {
   title: "බොමු.lk",
   description:
-    "A driver for your car, or a ride in ours, after you've been drinking.",
+    "Had a drink? A sober driver comes to you and drives you home, or wherever you need to go, in your own vehicle.",
 };
 
 export default function RootLayout({
